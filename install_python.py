@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #coding:utf-8
-#自动安装Python 2或者pyhton3
+#自动安装Python 2或者pyhton3,此脚本的运行环境为python2
 #导入Python的系统编程操作模块
 import os
  
