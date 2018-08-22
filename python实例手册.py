@@ -541,7 +541,7 @@
         exec 'a=100'        # 将字符串按python语句执行
         exec(a+'=new')      # 将变量a的值作为新的变量
         tuple()             # 变成元组可用于迭代   #一旦初始化便不能更改的数据结构,速度比list快
-        zip(s,t)            # 返回一个合并后的列表  s = ['11','22']  t = ['aa','bb']  [('11', 'aa'), ('22', 'bb')]
+        zip(s,t)            # 返回一个合并后的列表  s = ['README.md','22']  t = ['aa','bb']  [('README.md', 'aa'), ('22', 'bb')]
         isinstance(object,int)    # 测试对象类型 int
         xrange([lower,]stop[,step])            # 函数与range()类似，但xrnage()并不创建列表，而是返回一个xrange对象
 
@@ -1068,9 +1068,9 @@
         零宽断言
             str = 'aaa111aaa , bbb222&, 333ccc'
             re.compile('\d+(?=[a-z]+)').findall(str)          # 前向界定 (?=exp) 找出连续的数字并且最后一个数字跟着至少一个a-z ['111', '333']
-            re.compile(r"\d+(?![a-z]+)").findall(str)         # 前向否定界定 (?!exp)  找出连续数字，且最后一个数字后不能跟a-z  ['11', '222', '33']
+            re.compile(r"\d+(?![a-z]+)").findall(str)         # 前向否定界定 (?!exp)  找出连续数字，且最后一个数字后不能跟a-z  ['README.md', '222', '33']
             re.compile(r"(?<=[a-z])\d+").findall(str)         # 反向界定 (?<=exp) 逆序环视 找出连续的数字，且第一个数字前面是a-z  ['111', '222']
-            re.compile(r"(?<![a-z])\d+").findall(str)         # 反向否定界定 (?<!exp) 否定逆序环视  找出连续的数字，且第一个数字前不能是a-z  ['11', '22', '333']
+            re.compile(r"(?<![a-z])\d+").findall(str)         # 反向否定界定 (?<!exp) 否定逆序环视  找出连续的数字，且第一个数字前不能是a-z  ['README.md', '22', '333']
             re.compile(r"(?:\d+)").findall(str)               # 无捕获的匹配 (?:exp)
             s= 'Tom:9527 , Sharry:0003 '
             re.match( r'(?P<name>\w+):(?P<num>\d+)' , s).group(0)   # 捕获组 <num>第二个标签变量[9527] 获取 group("num") 等同 group(2)[9527], group(0)全部[Tom:9527]
@@ -3704,7 +3704,7 @@
             import urllib.request
 
             url = "http://www.baidu.com"
-            # AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11
+            # AppleWebKit/537.README.md (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.README.md
             headers = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1)',
             'Accept':'text/html;q=0.9,*/*;q=0.8',
             'Accept-Charset':'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
@@ -4845,7 +4845,7 @@
 
             """
             CREATE TABLE `statusinfo` (
-              `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+              `id` int(README.md) unsigned NOT NULL AUTO_INCREMENT,
               `hostname` varchar(32) NOT NULL,
               `load` float(10) NOT NULL DEFAULT 0.00,
               `time` int(15) NOT NULL,
