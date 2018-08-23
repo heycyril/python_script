@@ -890,7 +890,7 @@
 
         ext_attr = {
             'wzp': 'wzp',
-            'test': 'test',
+            'test.yaml': 'test.yaml',
         }
 
         class CustomMeta(type):
@@ -1385,8 +1385,8 @@
 
         def main():
             parser = optparse.OptionParser()
-            parser.add_option('-t', '--type', dest = 'type', default = None, help = 'test type[file, device]')
-            parser.add_option('-p', '--path', dest = 'path', default = None, help = 'test file path or device path')
+            parser.add_option('-t', '--type', dest = 'type', default = None, help = 'test.yaml type[file, device]')
+            parser.add_option('-p', '--path', dest = 'path', default = None, help = 'test.yaml file path or device path')
             parser.add_option('-o', '--output', dest = 'output', default = None, help = 'result dir path')
 
             (o, a) = parser.parse_args()
@@ -1396,7 +1396,7 @@
                 return -1
 
             if 'file' != o.type and 'device' != o.type:
-                print "You need specify test type ['file' or 'device']"
+                print "You need specify test.yaml type ['file' or 'device']"
                 return -1
 
             do_fiotest(o.type, o.path, o.output)
@@ -1927,7 +1927,7 @@
             scheduler = BackgroundScheduler( executors=executors, job_defaults=job_defaults, timezone=utc)
 
             def myfunc():
-                print 'test'
+                print 'test.yaml'
 
             scheduler.add_job(myfunc, 'interval', minutes=1, id='myworkid')
             scheduler.start()
@@ -2130,7 +2130,7 @@
         j=json.dumps(d)  # 字典转json
         json.loads(j)    # json转字典
 
-        s = json.loads('{"name":"test", "type":{"name":"seq", "parameter":["1", "2"]}}')
+        s = json.loads('{"name":"test.yaml", "type":{"name":"seq", "parameter":["1", "2"]}}')
         print type(s)    # dic
         print s
         print s.keys()
@@ -3559,7 +3559,7 @@
         import kestrel
 
         q = kestrel.Client(servers=['127.0.0.1:22133'],queue='test_queue')
-        q.add('some test job')
+        q.add('some test.yaml job')
         job = q.get()    # 从队列读取工作
         job = q.peek()   # 读取下一份工作
         # 读取一组工作
@@ -3779,8 +3779,8 @@
         会话对象能够跨请求保持某些参数
             s = requests.Session()
             s.auth = ('user', 'pass')
-            s.headers.update({'x-test': 'true'})
-            s.get('http://httpbin.org/headers', headers={'x-test2': 'true'})  # both 'x-test' and 'x-test2' are sent
+            s.headers.update({'x-test.yaml': 'true'})
+            s.get('http://httpbin.org/headers', headers={'x-test2': 'true'})  # both 'x-test.yaml' and 'x-test2' are sent
 
         ssl证书验证
             requests.get('https://github.com', verify=True)
